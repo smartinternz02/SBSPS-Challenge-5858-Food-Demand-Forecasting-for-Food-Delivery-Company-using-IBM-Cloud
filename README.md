@@ -2,6 +2,9 @@
 [Project for IBM Build-A-Thon](https://smartinternz.com/ibm-build-a-thon-2021)
 
 ---
+### Video demo link: [yt-link]
+### Main project file: ibm_food.ipynb
+
 ### Project Work Flow:
 
 - The user interacts with the UI (User Interface) to upload the input features.
@@ -18,4 +21,4 @@ Our base data consists of four csv files containing information about test data,
 - meal_info.csv: Contains information of each meal being served.
 
 
-Dataset can be obtained from different kaggle.com, data.gov, UCI machine learning repository etc.
+Dataset obtained from [kaggle.com](https://www.kaggle.com/kannanaikkal/food-demand-forecasting).
