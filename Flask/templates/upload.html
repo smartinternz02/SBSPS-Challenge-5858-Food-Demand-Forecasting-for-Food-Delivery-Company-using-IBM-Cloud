@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/home">Home</a></li>
+        <li><a href="/pred">Pred</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/smartinternz02/SBSPS-Challenge-5858-Food-Demand-Forecasting-for-Food-Delivery-Company-using-IBM-Cloud">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg> 
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<form method="POST" action="/predict" class="was-validated text-center">
+
+    <br>
+
+  <div class="form-group">
+    <select class="custom-select" id="homepage_featured" name="homepage_featured" required>
+      <option value="" id="homepage_featured" name="homepage_featured">homepage_featured</option>
+      <option value="0" id="homepage_featured" name="homepage_featured">No</option>
+      <option value="1" id="homepage_featured" name="homepage_featured">Yes</option>
+    </select>
+    <div class="invalid-feedback">Homepage featured</div>
+  </div>
+
+  <div class="form-group">
+  <select class="custom-select" id="emailer_for_promotion" name="emailer_for_promotion" required>
+    <option value="" id="emailer_for_promotion" name="emailer_for_promotion">emailer_for_promotion</option>
+    <option value="0" id="emailer_for_promotion" name="emailer_for_promotion">No</option>
+    <option value="1" id="emailer_for_promotion" name="emailer_for_promotion">Yes</option>
+  </select>
+  <div class="invalid-feedback">emailer for promotion</div>
+  </div>
+
+  <div class="form-group">
+    <label for="usr">Op_code</label>
+    <input type="number" class="form-control" id="Op_code" name="Op_code">
+  </div>
+
+  <div class="form-group">
+    <label for="usr">city_code</label>
+    <input type="number" class="form-control" id="city_code" name="city_code">
+  </div>
+
+  <div class="form-group">
+    <label for="usr">region_code</label>
+    <input type="number" class="form-control" id="region_code" name="region_code">
+  </div>
+
+  <div class="form-group">
+    <select class="custom-select" id="cuisine" name="cuisine" required>
+      <option value="" id="cuisine" name="cuisine">cuisine</option>
+      <option value="0" id="cuisine" name="cuisine">Thai</option>
+      <option value="1" id="cuisine" name="cuisine">Indian</option>
+      <option value="2" id="cuisine" name="cuisine">Italian</option>
+      <option value="3" id="cuisine" name="cuisine">Continental</option>
+  </select>
+  <div class="invalid-feedback">Cuisine</div>
+  </div>
+
+  <div class="form-group">
+    <select class="custom-select" id="category" name="category" required>
+      <option value="" id="category" name="category">category</option>
+      <option value="0" id="category" name="category">Beverages</option>
+      <option value="1" id="category" name="category">Extras</option>
+      <option value="2" id="category" name="category">Soup</option>
+      <option value="3" id="category" name="category">Salad</option>
+      <option value="4" id="category" name="category">Rice Bowl</option>
+      <option value="5" id="category" name="category">Other Snacks</option>
+      <option value="6" id="category" name="category">Starters</option>
+      <option value="7" id="category" name="category">Sandwich</option>
+      <option value="8" id="category" name="category">Desert</option>
+      <option value="9" id="category" name="category">Biryani</option>
+      <option value="10" id="category" name="category">Pasta</option>
+      <option value="11" id="category" name="category">Pizza</option>
+      <option value="12" id="category" name="category">Fish</option>
+      <option value="13" id="category" name="category">Seafood</option>
+    </select>
+    <div class="invalid-feedback">Category</div>
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  </div>
+  </div>
+  </form>
+
+<div><p>Prediction is: {{ prediction_text }}</p></div>
+
+<br>
+<footer class="container-fluid text-center">
+  <p><a href="https://smartinternz.com/ibm-build-a-thon-2021">Project Build A Thon - 2021</a></p>
+</footer>
+
+</body>
+</html>

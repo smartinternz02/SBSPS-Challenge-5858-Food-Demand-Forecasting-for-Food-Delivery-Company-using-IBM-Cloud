@@ -2,8 +2,12 @@
 [Project for IBM Build-A-Thon](https://smartinternz.com/ibm-build-a-thon-2021)
 
 ---
-### Video demo link: [yt-link]
-### Main project file: ibm_food.ipynb
+### Video demo link: [yt-link](#TODO)
+### Project deliverables
+- [Dashboard link](#TODO)
+- [Report](#TODO)
+- [ibm_food.ipynb](ibm_food.ipynb)
+- [submission.csv](submission.csv)
 
 ### Project Work Flow:
 
